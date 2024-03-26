@@ -1,0 +1,81 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap'); */
+@import url("https://fonts.googleapis.com/css2?family=Port+Lligat+Slab&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+#logo,
+#footerLOGO {
+  font-family: "Pacifico", cursive;
+  /* text-shadow: 0px 0px 10px #dddbcb; */
+}
+
+#loading {
+  font-family: "Oswald", cursive;
+}
+.heading,
+#liItems,
+#mainComp,
+#card_1,
+#card_2,
+#topicHeading,
+#_siteSearch,
+#_footer {
+  font-family: "Port Lligat Slab", serif;
+}
+#cards{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px -100px 36px -28px inset;
+}
+
+
+#card_2 {
+  border-color: #f0f0f0;
+  box-shadow: 15px 15px 8px #f0f0f0;
+}
+
+#btn {
+  background: linear-gradient(to right, #dddbcb 50%, #008080 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all 0.5s ease-out;
+}
+#btn:hover {
+  background-position: left bottom;
+}
+.worldAnimation {
+  background: linear-gradient(to right, white 50%, red 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all 0.3s ease-out;
+}
+.worldAnimation:hover {
+  background-position: left bottom;
+}
+
+.lineAnimation::after{
+  content: '';
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #008080;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.lineAnimation:hover::after{
+  transform: scaleX(1);
+}
+.lineAnimationHome::after{
+  content: '';
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #dddbcb;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.lineAnimationHome:hover::after{
+  transform: scaleX(1);
+}
