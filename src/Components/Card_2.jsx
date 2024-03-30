@@ -3,8 +3,6 @@ import "./Style.css";
 import { RxDoubleArrowRight } from "react-icons/rx";
 import 'animate.css';
 
-
-
 function Card_2(props) {
   const photo = "/newsImage.png"
   return (

@@ -13,12 +13,12 @@ function App() {
       <NavBar/>
         <Routes>
           <Route exact path="/" element={<NewzItems/>}></Route>
-          <Route exact path="/business" element={<MoreNews key="business" topic="BUSINESS" />}></Route>
-          <Route exact path="/sports" element={<MoreNews key="sports" topic="SPORTS" />}></Route>
-          <Route exact path="/technology" element={<MoreNews key="technology" topic="TECHNOLOGY" />}></Route>
-          <Route exact path="/health" element={<MoreNews key="health" topic="HEALTH" />}></Route>
-          <Route exact path="/entertainment" element={<MoreNews key="entertainment" topic="ENTERTAINMENT" />}></Route>
-          <Route exact path="/world" element={<MoreNews key="world" topic="WORLD" />}></Route>
+          <Route exact path="/business" element={<MoreNews key="business" topic="business" />}></Route>
+          <Route exact path="/sports" element={<MoreNews key="sports" topic="sports" />}></Route>
+          <Route exact path="/technology" element={<MoreNews key="technology" topic="technology" />}></Route>
+          <Route exact path="/health" element={<MoreNews key="health" topic="health" />}></Route>
+          <Route exact path="/entertainment" element={<MoreNews key="entertainment" topic="entertainment" />}></Route>
+          <Route exact path="/world" element={<MoreNews key="world" topic="world" />}></Route>
         </Routes>
         <Footer/>
     </Router>

@@ -3,35 +3,24 @@ import Card_2 from "./Card_2";
 import "./Style.css";
 
 function MoreNews(props) {
-  const [articles, setArticles] = useState([]);
-  const options = {
-    method: "GET",
-    headers: {
-      // "X-RapidAPI-Key": "e345e8925fmshe684befd705bd60p1cf18ajsn1bd7b0d49a0f",
-      "X-RapidAPI-Key": "93337b3302mshae531ee2232d6d6p120395jsn420ebc64749e",
-      "X-RapidAPI-Host": "real-time-news-data.p.rapidapi.com",
-    },
-  };
-  
-  const run = () => {
-    const URL = `https://real-time-news-data.p.rapidapi.com/topic-headlines?topic=${props.topic}&country=IN&lang=en`;
-    const fetchData = async () => {
-      try {
-        let response = await fetch(URL, options);
-        let items = await response.json();
-        // console.log(json.articles);
-        setArticles(items.data);
-      } catch (error) {
-        console.log("error", error);
-      }
-    };
-    fetchData();
-  };
-  const displayMoreNews = articles  //.slice(0, 45);
+  const [article, setArticle] = useState([]);
+  const apiKey = "9c3a2e976a521985949edd68ac41ade2";
+  const url = `https://gnews.io/api/v4/top-headlines?category=${props.topic}&lang=en&max=10&apikey=${apiKey}`;
 
-  // useEffect(() => {
-  //   run();
-  // }, []);
+  const fetchData = async (URL) => {
+    try {
+      const response = await fetch(URL);
+      const data = await response.json();
+      setArticle(data.articles);
+    } catch (error) {
+      console.log("Error : ", error);
+    }
+  };
+  useEffect(() => {
+    fetchData(url);
+  }, []);
+
+  console.log(article);
 
   return (
     <>
@@ -44,7 +33,7 @@ function MoreNews(props) {
         </h1>
         <hr className="border-4 border-[#050505] rounded-r-md mx-5 mb-5 md:mx-12 xl:mx-60" />
         <div className="flex justify-center">
-          {displayMoreNews.length === 0 ? (
+          {article.length === 0 ? (
             <div
               id="loading"
               className="my-40 text-3xl flex items-center justify-center"
@@ -54,15 +43,15 @@ function MoreNews(props) {
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-              {displayMoreNews.map((e) => {
+              {article.map((e) => {
                 return (
-                  <div className="" key={e.link}>
+                  <div className="" key={e.url}>
                     <Card_2
                       title={e.title}
-                      ImageUrl={e.photo_url}
-                      urL={e.link}
-                      name={e.source_url}
-                      time={e.published_datetime_utc}
+                      ImageUrl={e.image}
+                      urL={e.url}
+                      name={e.source.name}
+                      time={e.publishedAt}
                     />
                   </div>
                 );
