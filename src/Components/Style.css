@@ -6,30 +6,25 @@
 #logo,
 #footerLOGO {
   font-family: "Pacifico", cursive;
-  /* text-shadow: 0px 0px 10px #dddbcb; */
 }
 
 #loading {
   font-family: "Oswald", cursive;
 }
-.heading,
 #liItems,
-#mainComp,
-#card_1,
-#card_2,
-#topicHeading,
 #_siteSearch,
 #_footer {
   font-family: "Port Lligat Slab", serif;
 }
-#cards{
-  box-shadow: rgba(0, 0, 0, 0.35) 0px -100px 36px -28px inset;
+.heading,
+#topicHeading {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
-
-
-#card_2 {
-  border-color: #f0f0f0;
-  box-shadow: 15px 15px 8px #f0f0f0;
+#cards {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px -100px 36px -8px inset;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 #btn {
@@ -51,8 +46,8 @@
   background-position: left bottom;
 }
 
-.lineAnimation::after{
-  content: '';
+.lineAnimation::after {
+  content: "";
   display: block;
   height: 3px;
   width: 100%;
@@ -62,11 +57,11 @@
   transition: transform 0.3s ease;
 }
 
-.lineAnimation:hover::after{
+.lineAnimation:hover::after {
   transform: scaleX(1);
 }
-.lineAnimationHome::after{
-  content: '';
+.lineAnimationHome::after {
+  content: "";
   display: block;
   height: 3px;
   width: 100%;
@@ -76,6 +71,82 @@
   transition: transform 0.3s ease;
 }
 
-.lineAnimationHome:hover::after{
+.lineAnimationHome:hover::after {
   transform: scaleX(1);
+}
+
+/* Navigation bar styling:-- */
+.floating-links {
+  position: fixed;
+  top: 40vh;
+  left: 0;
+}
+
+/* Card 1 styling:-- */
+#card-1 {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.card1-figure-img {
+  max-width: 100%;
+  height: 200px;
+}
+@media (min-width: 1024px) {
+  .card1-figure-img {
+    height: 160px;
+  }
+}
+@media (min-width: 1600px) {
+  .card1-figure-img {
+    height: 200px;
+  }
+}
+.card-1-title {
+  margin: 8px 0px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+/*Card 2 styling:-- */
+.card-container {
+  position: relative;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.figure-img {
+  max-width: 100%;
+  height: 200px;
+}
+@media (min-width: 1600px) {
+  .figure-img {
+    height: 260px;
+  }
+}
+.title-para {
+  margin: 8px 0px;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 28px;
+}
+@media (min-width: 1600px) {
+  .title-para {
+    font-size: 26px;
+  }
+}
+.title-para:hover {
+  text-decoration: underline;
+}
+.description-para {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+}
+.source-time {
+  position: absolute;
+  bottom: 0;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: -0.1rem;
+}
+.source-span {
+  font-weight: 600;
 }

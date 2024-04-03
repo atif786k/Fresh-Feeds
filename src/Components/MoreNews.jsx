@@ -27,11 +27,11 @@ function MoreNews(props) {
       <div className=" mt-28 mb-20 md:mt-40 bg-[#FEFEFE]">
         <h1
           id="topicHeading"
-          className="bg-[#050505] text-[#dddbcb] rounded-t-lg font-bold text-xl mx-5 md:mx-12 xl:mx-60 border-2 border-[#050505] inline py-1 px-2"
+          className="bg-[#050505] text-[#dddbcb] rounded-t-lg font-bold text-xl mx-5 md:mx-12 xl:mx-24  3xl:mx-52 border-2 border-[#050505] inline py-1 px-2"
         >
           {props.topic}
         </h1>
-        <hr className="border-4 border-[#050505] rounded-r-md mx-5 mb-5 md:mx-12 xl:mx-60" />
+        <hr className="border-4 border-[#050505] rounded-r-md mx-5 mb-5 md:mx-12 xl:mx-24 3xl:mx-52" />
         <div className="flex justify-center">
           {article.length === 0 ? (
             <div
@@ -48,6 +48,7 @@ function MoreNews(props) {
                   <div className="" key={e.url}>
                     <Card_2
                       title={e.title}
+                      description={e.description}
                       ImageUrl={e.image}
                       urL={e.url}
                       name={e.source.name}

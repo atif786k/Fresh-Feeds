@@ -8,7 +8,7 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "./Style.css";
-import 'animate.css';
+import "animate.css";
 
 function NavBar() {
   const [active, setActive] = useState(false);
@@ -82,7 +82,7 @@ function NavBar() {
             </li>
           </ul>
         </div>
-        <div className="animate__animated animate__fadeInLeftBig bg-[#dfdede] text-[#050505] hidde fixed top-[300px] left-0 px-4 py-4 space-y-3 text-2xl rounded-tr-2xl rounded-br-2xl flex flex-col hover:scale-110 hover:translate-x-2 transition duration-300 ease-in-out z-10">
+        <div className="floating-links animate__animated animate__fadeInLeftBig bg-[#dfdede] text-[#050505] hidde px-4 py-4 space-y-3 text-2xl rounded-tr-2xl rounded-br-2xl flex flex-col hover:scale-110 hover:translate-x-2 transition duration-300 ease-in-out z-10">
           <span className="footer_id">
             <Link to="https://www.facebook.com/moh.atif.927" target="_blank">
               <FaFacebook className="fa cursor-pointer hover:text-[#008080]" />

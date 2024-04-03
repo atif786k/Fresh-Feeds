@@ -10,7 +10,8 @@ function NewzItems() {
   const options = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": "e345e8925fmshe684befd705bd60p1cf18ajsn1bd7b0d49a0f",
+      "X-RapidAPI-Key": "07aaf7093dmshae0e2bc1ce4d61ep14bdf4jsn71776f1561fa",
+      //  "X-RapidAPI-Key": "e345e8925fmshe684befd705bd60p1cf18ajsn1bd7b0d49a0f",
       // "X-RapidAPI-Key": "93337b3302mshae531ee2232d6d6p120395jsn420ebc64749e",
       "X-RapidAPI-Host": "seeking-alpha.p.rapidapi.com",
     },
@@ -19,7 +20,8 @@ function NewzItems() {
   const options_1 = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": "e345e8925fmshe684befd705bd60p1cf18ajsn1bd7b0d49a0f",
+      "X-RapidAPI-Key": "07aaf7093dmshae0e2bc1ce4d61ep14bdf4jsn71776f1561fa",
+      // "X-RapidAPI-Key": "e345e8925fmshe684befd705bd60p1cf18ajsn1bd7b0d49a0f",
       // "X-RapidAPI-Key": "93337b3302mshae531ee2232d6d6p120395jsn420ebc64749e",
       "X-RapidAPI-Host": "anime-news-net.p.rapidapi.com",
     },
@@ -28,7 +30,8 @@ function NewzItems() {
   const options_2 = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": "e345e8925fmshe684befd705bd60p1cf18ajsn1bd7b0d49a0f",
+      "X-RapidAPI-Key": "07aaf7093dmshae0e2bc1ce4d61ep14bdf4jsn71776f1561fa",
+      // "X-RapidAPI-Key": "e345e8925fmshe684befd705bd60p1cf18ajsn1bd7b0d49a0f",
       // "X-RapidAPI-Key": "93337b3302mshae531ee2232d6d6p120395jsn420ebc64749e",
       "X-RapidAPI-Host": "cnbc.p.rapidapi.com",
     },
@@ -47,8 +50,6 @@ function NewzItems() {
       try {
         const response = await fetch(URL, options);
         const items = await response.json();
-        // setDataItems(items.data);
-        // console.log(items.data);
         setDataItems(items.data);
       } catch (error) {
         console.log("ERROR", error);
@@ -63,7 +64,6 @@ function NewzItems() {
       try {
         const response = await fetch(URL_1, options_1);
         const items = await response.json();
-        // console.log(items);
         setAnimeData(items);
       } catch (error) {
         console.log("ERROR", error);
@@ -112,16 +112,12 @@ function NewzItems() {
     run_3();
   }, []);
 
-  // useEffect(() => {
-  //   console.log("dataItems:", dataItems);
-  // }, [dataItems]);
-
   const photo = "/newsImage.png";
 
   const displayItems = dataItems.slice(2, 10);
-  const displayNewsItems = newsData.slice(2, 12);
-  const displayAnimeItems = animeData.slice(2, 12);
-  const displayMarketItems = marketData.slice(2, 12);
+  const displayNewsItems = newsData.slice(2, 10);
+  const displayAnimeItems = animeData.slice(2, 10);
+  const displayMarketItems = marketData.slice(2, 10);
 
   return (
     <>
@@ -131,13 +127,10 @@ function NewzItems() {
       >
         {displayItems.length === 0 ? (
           <div id="loading" className="w-[340px] md:w-[700px] xl:w-[1110px]">
-            {/* Loading...{" "} */}
-            {/* <img src="/spinner.gif" width="70px" alt="" className="ml-2" /> */}
-
             <Skeleton height="350px" count={1} />
           </div>
         ) : (
-          <div className="mx-3 text-[#fefefe] space-y-2 font-bold relative md:mx-6 md:space-x-2 lg:space-y-0 md:grid md:grid-cols-2 lg:grid-cols-4 lg:gap-3 lg:h-[395px] lg:w-[1000px] xl:w-[1150px]">
+          <div className="news-item-container mx-3 text-[#fefefe] space-y-2 font-bold relative md:mx-6 md:space-x-2 lg:space-y-0 md:grid md:grid-cols-2 lg:grid-cols-4 lg:gap-3 lg:h-[395px] lg:w-[1000px] xl:w-[1250px] 3xl:w-[1505px] 3xl:h-[460px]">
             <h1 className="heading absolute left-0 md:left-2 top-[-35px] text-[#050505] font-semibold text-2xl">
               Trending News
             </h1>
@@ -146,10 +139,9 @@ function NewzItems() {
             </h1>
             <div
               id="cards"
-              className="animate__animated animate__fadeInLeft bg-[#008080] bg-bottom text-xl bg-no-repeat bg-cover w-92 md:w-auto h-48 relative transition-all ease-in lg:col-span-2 lg:row-span-2 lg:h-[395px]"
+              className="animate__animated animate__fadeInLeft bg-[#008080] bg-bottom bg-no-repeat bg-cover w-92 md:w-auto h-48 relative transition-all ease-in lg:col-span-2 lg:row-span-2 lg:h-[395px] 3xl:h-[460px]"
               style={{
                 backgroundImage: `url(${dataItems[5].attributes.gettyImageUrl})`,
-                // backgroundImage: `url(${photo})`,
               }}
             >
               <a href={dataItems[5].links.canonical} target="_blank">
@@ -157,13 +149,13 @@ function NewzItems() {
                   {dataItems[5].attributes.title}
                 </p>
               </a>
-              <p className="mt-2 px-2 absolute bottom-2 text-gray-200 font-mono">
+              <p className="mt-2 px-2 absolute bottom-2 text-gray-200">
                 {new Date(dataItems[5].attributes.publishOn).toDateString()}
               </p>
             </div>
             <div
               id="cards"
-              className="animate__animated animate__fadeInRight bg-[#008080] lg:grid text-xl h-48 bg-no-repeat bg-cover transition-all ease-in lg:h-auto lg:col-span-2 relative"
+              className="animate__animated animate__fadeInRight bg-[#008080] lg:grid h-48 bg-no-repeat bg-cover transition-all ease-in lg:h-auto lg:col-span-2 relative"
               style={{
                 backgroundImage: `url(${dataItems[6].attributes.gettyImageUrl})`,
               }}
@@ -174,13 +166,13 @@ function NewzItems() {
                 </p>
               </a>
 
-              <p className="px-2 absolute bottom-2 lg:flex text-gray-200 font-mono">
+              <p className="px-2 absolute bottom-2 lg:flex text-gray-200">
                 {new Date(dataItems[6].attributes.publishOn).toDateString()}
               </p>
             </div>
             <div
               id="cards"
-              className="animate__animated animate__fadeInLeft bg-[#008080] lg:grid text-xl h-48 bg-no-repeat bg-cover transition-all ease-in relative lg:h-auto"
+              className="animate__animated animate__fadeInLeft bg-[#008080] lg:grid h-48 bg-no-repeat bg-cover transition-all ease-in relative lg:h-auto"
               style={{
                 backgroundImage: `url(${dataItems[7].attributes.gettyImageUrl})`,
               }}
@@ -190,13 +182,13 @@ function NewzItems() {
                   {dataItems[7].attributes.title}
                 </p>
               </a>
-              <p className="mt-2 px-2 absolute bottom-2 lg:bottom-1 text-gray-200 text-md font-mono">
+              <p className="mt-2 px-2 absolute bottom-2 lg:bottom-1 text-gray-200 text-md">
                 {new Date(dataItems[7].attributes.publishOn).toDateString()}
               </p>
             </div>
             <div
               id="cards"
-              className="animate__animated animate__fadeInRight bg-[#008080] lg:grid text-xl h-48 bg-no-repeat bg-cover transition-all ease-in relative lg:h-auto"
+              className="animate__animated animate__fadeInRight bg-[#008080] lg:grid h-48 bg-no-repeat bg-cover transition-all ease-in relative lg:h-auto"
               style={{
                 backgroundImage: `url(${dataItems[9].attributes.gettyImageUrl})`,
               }}
@@ -206,7 +198,7 @@ function NewzItems() {
                   {dataItems[9].attributes.title}
                 </p>
               </a>
-              <p className="mt-2 px-2 absolute bottom-2 lg:bottom-1 text-gray-200 text-md font-mono">
+              <p className="mt-2 px-2 absolute bottom-2 lg:bottom-1 text-gray-200 text-md">
                 {new Date(dataItems[9].attributes.publishOn).toDateString()}
               </p>
             </div>
@@ -219,12 +211,11 @@ function NewzItems() {
           </h1>
           <hr className="border-4 border-[#050505] rounded-r-md mx-2 xl:mx-1 mb-5" />
           {displayNewsItems.length === 0 ? (
-            <div id="loading" className="w-[340px] md:w-[700px] xl:w-[1110px]">
-              {/* <img src="/spinner_2.gif" width="70px" alt="" className="ml-2" /> */}
+            <div id="loading" className="w-[340px] md:w-[700px] xl:w-[1250px]">
               <Skeleton height="50px" count={4} />
             </div>
           ) : (
-            <div className="text-[#050505] mx-2 xl:mx-0 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+            <div className="text-[#050505] mx-2 xl:mx-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
               {displayNewsItems?.map((e) => {
                 return (
                   <div className="" key={e.id}>
@@ -247,12 +238,11 @@ function NewzItems() {
           </h1>
           <hr className="border-4 border-[#050505] rounded-r-md mx-2 xl:mx-1 mb-5" />
           {displayAnimeItems.length === 0 ? (
-            <div id="loading" className="w-[340px] md:w-[700px] xl:w-[1110px]">
-              {/* <img src="/spinner_2.gif" width="70px" alt="" className="ml-2" /> */}
+            <div id="loading" className="w-[340px] md:w-[700px] xl:w-[1250px]">
               <Skeleton height="50px" count={4} />
             </div>
           ) : (
-            <div className="text-[#050505] mx-2 xl:mx-0 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+            <div className="text-[#050505] mx-2 xl:mx-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
               {displayAnimeItems?.map((e) => {
                 return (
                   <div className="" key={e.details_api.id}>
@@ -275,12 +265,11 @@ function NewzItems() {
           </h1>
           <hr className="border-4 border-[#050505] rounded-r-md mx-2 xl:mx-1 mb-5" />
           {displayMarketItems.length === 0 ? (
-            <div id="loading" className="w-[340px] md:w-[700px] xl:w-[1110px]">
-              {/* <img src="/spinner_2.gif" width="60px" alt="" className="ml-2" /> */}
+            <div id="loading" className="w-[340px] md:w-[700px] xl:w-[1250px]">
               <Skeleton height="50px" count={4} />
             </div>
           ) : (
-            <div className="text-[#050505] mx-2 xl:mx-0 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+            <div className="text-[#050505] mx-2 xl:mx-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
               {displayMarketItems?.map((e) => {
                 return (
                   <div className="" key={e.id}>
@@ -298,7 +287,7 @@ function NewzItems() {
         </div>
         <h1 className="flex items-center text-xl font-semibold text-gray-400 my-8">
           <RxDoubleArrowLeft className="mr-4" />
-          Follow US for daily updated News
+          Sign Up now to get daily news
           <RxDoubleArrowRight className="ml-4" />
         </h1>
       </div>
@@ -306,55 +295,3 @@ function NewzItems() {
   );
 }
 export default NewzItems;
-
-{
-  /* ChatGPT code */
-}
-{
-  /* // useEffect(() => { 
-  {/* //   const fetchData = async () => {
-  //     const URL = "https://seeking-alpha.p.rapidapi.com/news/v2/list-trending?size=10";
-
-  //     try {
-  //       const response = await fetch(URL, options);
-  //       const items = await response.json();
-  //       setDataItems(items.data);
-  //     } catch (error) {
-  //       console.log("ERROR", error);
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, []); */
-}
-
-{
-  /* <div className="relative flex justify-center text-[#f0f0f0] mt-32 md:mt-40">
-        <h1 className="heading text-[#050505] absolute top-[-40px] left-56 text-2xl">
-          Trending News
-        </h1>
-        <div className="mx-2 space-y-2 font-serif font-bold md:mx-6 lg:space-y-0 lg:grid lg:grid-cols-4 lg:gap-3 lg:h-96 lg:w-[1100px]">
-          {dataItems.length > 0 &&
-            displayItems.map((item, index) => (
-              <div
-                key={index}
-                className={`bg-[#008080] text-xl bg-no-repeat bg-cover relative transition-all ease-in ${
-                  index === 0 ? 'h-72 lg:h-96 lg:col-span-2 lg:row-span-2' : 'h-96'
-                }`}
-                style={{
-                  backgroundImage: `url(${item.attributes.gettyImageUrl})`,
-                }}
-              >
-                <a href={item.links.canonical} target="_blank">
-                  <p className="absolute bottom-10 px-2 hover:underline">
-                    {item.attributes.title}
-                  </p>
-                </a>
-                <p className="mt-2 px-2 absolute bottom-2 text-gray-200 text-md font-mono">
-                  {new Date(item.attributes.publishOn).toGMTString()}
-                </p>
-              </div>
-            ))}
-        </div>
-      </div> */
-}
