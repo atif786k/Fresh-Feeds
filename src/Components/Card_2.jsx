@@ -6,7 +6,7 @@ function Card_2(props) {
   const photo = "/newsImage.png";
   return (
     <>
-      <div className="card-container animate__animated animate__fadeInUp mx-3 my-6 h-[420px] max-w-[420px] 3xl:max-w-[480px] 3xl:h-[460px]">
+      <div className="card-container animate__animated animate__fadeInUp mx-3 my-6 h-[440px] max-w-[420px] 3xl:max-w-[480px] 3xl:h-[460px]">
         <figure
           className="figure-img"
           style={{
