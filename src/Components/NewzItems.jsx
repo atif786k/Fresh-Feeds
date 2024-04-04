@@ -10,8 +10,8 @@ function NewzItems() {
   const options = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": "07aaf7093dmshae0e2bc1ce4d61ep14bdf4jsn71776f1561fa",
-      //  "X-RapidAPI-Key": "e345e8925fmshe684befd705bd60p1cf18ajsn1bd7b0d49a0f",
+      // "X-RapidAPI-Key": "07aaf7093dmshae0e2bc1ce4d61ep14bdf4jsn71776f1561fa",
+      "X-RapidAPI-Key": "e345e8925fmshe684befd705bd60p1cf18ajsn1bd7b0d49a0f",
       // "X-RapidAPI-Key": "93337b3302mshae531ee2232d6d6p120395jsn420ebc64749e",
       "X-RapidAPI-Host": "seeking-alpha.p.rapidapi.com",
     },
@@ -20,8 +20,8 @@ function NewzItems() {
   const options_1 = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": "07aaf7093dmshae0e2bc1ce4d61ep14bdf4jsn71776f1561fa",
-      // "X-RapidAPI-Key": "e345e8925fmshe684befd705bd60p1cf18ajsn1bd7b0d49a0f",
+      // "X-RapidAPI-Key": "07aaf7093dmshae0e2bc1ce4d61ep14bdf4jsn71776f1561fa",
+      "X-RapidAPI-Key": "e345e8925fmshe684befd705bd60p1cf18ajsn1bd7b0d49a0f",
       // "X-RapidAPI-Key": "93337b3302mshae531ee2232d6d6p120395jsn420ebc64749e",
       "X-RapidAPI-Host": "anime-news-net.p.rapidapi.com",
     },
@@ -30,8 +30,8 @@ function NewzItems() {
   const options_2 = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": "07aaf7093dmshae0e2bc1ce4d61ep14bdf4jsn71776f1561fa",
-      // "X-RapidAPI-Key": "e345e8925fmshe684befd705bd60p1cf18ajsn1bd7b0d49a0f",
+      // "X-RapidAPI-Key": "07aaf7093dmshae0e2bc1ce4d61ep14bdf4jsn71776f1561fa",
+      "X-RapidAPI-Key": "e345e8925fmshe684befd705bd60p1cf18ajsn1bd7b0d49a0f",
       // "X-RapidAPI-Key": "93337b3302mshae531ee2232d6d6p120395jsn420ebc64749e",
       "X-RapidAPI-Host": "cnbc.p.rapidapi.com",
     },
@@ -126,7 +126,10 @@ function NewzItems() {
         className=" flex flex-col items-center justify-center mt-28 md:mt-40"
       >
         {displayItems.length === 0 ? (
-          <div id="loading" className="w-[340px] md:w-[700px] xl:w-[1110px]">
+          <div
+            id="loading"
+            className="w-[340px] md:w-[700px] lg:w-[1000px] xl:w-[1250px]"
+          >
             <Skeleton height="350px" count={1} />
           </div>
         ) : (
@@ -139,7 +142,7 @@ function NewzItems() {
             </h1>
             <div
               id="cards"
-              className="animate__animated animate__fadeInLeft bg-[#008080] bg-bottom bg-no-repeat bg-cover w-92 md:w-auto h-48 relative transition-all ease-in lg:col-span-2 lg:row-span-2 lg:h-[395px] 3xl:h-[460px]"
+              className="animate__animated animate__fadeInLeft bg-bottom bg-no-repeat bg-cover w-92 md:w-auto h-48 relative transition-all ease-in lg:col-span-2 lg:row-span-2 lg:h-[395px] 3xl:h-[460px]"
               style={{
                 backgroundImage: `url(${dataItems[5].attributes.gettyImageUrl})`,
               }}
@@ -155,7 +158,7 @@ function NewzItems() {
             </div>
             <div
               id="cards"
-              className="animate__animated animate__fadeInRight bg-[#008080] lg:grid h-48 bg-no-repeat bg-cover transition-all ease-in lg:h-auto lg:col-span-2 relative"
+              className="animate__animated animate__fadeInRight lg:grid h-48 bg-no-repeat bg-cover transition-all ease-in lg:h-auto lg:col-span-2 relative"
               style={{
                 backgroundImage: `url(${dataItems[6].attributes.gettyImageUrl})`,
               }}
@@ -172,7 +175,7 @@ function NewzItems() {
             </div>
             <div
               id="cards"
-              className="animate__animated animate__fadeInLeft bg-[#008080] lg:grid h-48 bg-no-repeat bg-cover transition-all ease-in relative lg:h-auto"
+              className="animate__animated animate__fadeInLeft lg:grid h-48 bg-no-repeat bg-cover transition-all ease-in relative lg:h-auto"
               style={{
                 backgroundImage: `url(${dataItems[7].attributes.gettyImageUrl})`,
               }}
@@ -188,7 +191,7 @@ function NewzItems() {
             </div>
             <div
               id="cards"
-              className="animate__animated animate__fadeInRight bg-[#008080] lg:grid h-48 bg-no-repeat bg-cover transition-all ease-in relative lg:h-auto"
+              className="animate__animated animate__fadeInRight lg:grid h-48 bg-no-repeat bg-cover transition-all ease-in relative lg:h-auto"
               style={{
                 backgroundImage: `url(${dataItems[9].attributes.gettyImageUrl})`,
               }}
@@ -206,7 +209,7 @@ function NewzItems() {
         )}
 
         <div className="mt-16">
-          <h1 className="bg-[#050505] text-[#dddbcb] rounded-t-lg font-bold text-xl ml-2 xl:ml-1 border-2 border-[#050505] inline py-1 px-2">
+          <h1 className="heading bg-[#050505] text-white rounded-t-lg font-bold text-xl ml-2 xl:ml-1 border-2 border-[#050505] inline py-1 px-2">
             News
           </h1>
           <hr className="border-4 border-[#050505] rounded-r-md mx-2 xl:mx-1 mb-5" />
@@ -233,7 +236,7 @@ function NewzItems() {
         </div>
 
         <div className="mt-20">
-          <h1 className="bg-[#050505] text-[#dddbcb] rounded-t-lg font-bold text-xl ml-2 xl:ml-1 border-2 border-[#050505] inline py-1 px-2">
+          <h1 className="heading bg-[#050505] text-white rounded-t-lg font-bold text-xl ml-2 xl:ml-1 border-2 border-[#050505] inline py-1 px-2">
             Anime
           </h1>
           <hr className="border-4 border-[#050505] rounded-r-md mx-2 xl:mx-1 mb-5" />
@@ -260,7 +263,7 @@ function NewzItems() {
         </div>
 
         <div className="mt-20">
-          <h1 className="bg-[#050505] text-[#dddbcb] rounded-t-lg font-bold text-xl ml-2 xl:ml-1 border-2 border-[#050505] inline py-1 px-2">
+          <h1 className="heading bg-[#050505] text-white rounded-t-lg font-bold text-xl ml-2 xl:ml-1 border-2 border-[#050505] inline py-1 px-2">
             Market & Industry
           </h1>
           <hr className="border-4 border-[#050505] rounded-r-md mx-2 xl:mx-1 mb-5" />

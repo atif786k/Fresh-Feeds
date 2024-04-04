@@ -6,6 +6,7 @@ import {
   FaGithub,
   FaLinkedin,
 } from "react-icons/fa";
+import { IoMenu } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import "./Style.css";
 import "animate.css";
@@ -16,26 +17,26 @@ function NavBar() {
   return (
     <>
       <nav
-        className={`animate__animated animate__fadeInDown bg-[#050505] text-[#dddbcb] z-10 w-full fixed top-0 px-6 py-2 md:px-28 xl:px-48 ${
+        className={`ff-nav-bar animate__animated animate__fadeInDown bg-[#050505] text-white z-10 w-full fixed top-0 px-6 py-2 md:px-28 xl:px-44 3xl:px-52 ${
           active ? "shadow-none" : "shadow-xl"
         }`}
       >
         <div className="flex items-center justify-between">
-          <div id="logo" className="text-3xl relative font-bold text-white">
-            <span className="">FreshFeed</span>
-            <span className="text-[#008080]">S</span>
+          <div id="logo" className="relative text-white">
+            <span className="">Fresh</span>
+            <span className="text-[#008080]">FeedS</span>
           </div>
-          <div className="flex space-x-4 text-2xl">
+          <div className="flex items-center relative space-x-4 text-2xl">
             <input
               type="search"
               name="siteSearch"
-              id="_siteSearch"
-              placeholder="Search FreshFeeds"
-              className="hidden text-lg px-2 rounded-sm bg-[#f0f0f0] md:grid"
+              id="search-bar"
+              placeholder="Search..."
+              className="hidden text-black md:grid"
             />
-            <FaSearch className="cursor-pointer hover:text-white" />
+            <FaSearch className="cursor-pointer text-black absolute right-8 hover:text-white" />
             <Link to="#" onClick={() => setActive(!active)}>
-              <FaHamburger className="md:hidden hover:text-white" />
+              <IoMenu className="text-[32px] md:hidden hover:text-white" />
             </Link>
           </div>
         </div>

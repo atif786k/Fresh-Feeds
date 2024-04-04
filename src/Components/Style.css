@@ -5,20 +5,45 @@
 
 #logo,
 #footerLOGO {
-  font-family: "Pacifico", cursive;
+  font-family: "Oswald", cursive;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 34px;
+  letter-spacing: 0.02rem;
 }
 
 #loading {
   font-family: "Oswald", cursive;
 }
 #liItems,
-#_siteSearch,
+#search-bar,
 #_footer {
   font-family: "Port Lligat Slab", serif;
+  letter-spacing: 0.02rem;
 }
+
+#search-bar {
+  width: 250px;
+  padding: 1px 12px;
+  background-color: white;
+  color: #808080;
+  border: 1px solid rgb(209 213 219);
+  border-radius: 3px;
+  font-size: 22px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  outline: none;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
 .heading,
 #topicHeading {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  text-transform: capitalize;
 }
 #cards {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
@@ -74,7 +99,6 @@
 .lineAnimationHome:hover::after {
   transform: scaleX(1);
 }
-
 /* Navigation bar styling:-- */
 .floating-links {
   position: fixed;

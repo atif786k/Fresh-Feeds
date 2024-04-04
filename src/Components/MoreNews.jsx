@@ -27,7 +27,7 @@ function MoreNews(props) {
       <div className=" mt-28 mb-20 md:mt-40 bg-[#FEFEFE]">
         <h1
           id="topicHeading"
-          className="bg-[#050505] text-[#dddbcb] rounded-t-lg font-bold text-xl mx-5 md:mx-12 xl:mx-24  3xl:mx-52 border-2 border-[#050505] inline py-1 px-2"
+          className="bg-[#050505] text-white rounded-t-lg font-bold text-xl mx-5 md:mx-12 xl:mx-24  3xl:mx-52 border-2 border-[#050505] inline py-1 px-2"
         >
           {props.topic}
         </h1>

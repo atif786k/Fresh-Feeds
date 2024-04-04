@@ -9,7 +9,7 @@ function Card_1(props) {
     <>
       <div
         id="card-1"
-        className="animate__animated animate__fadeInUp relative mx-2 my-3 h-[280px] max-w-[380px] xl:max-w-[295px] 3xl:max-w-[360px] 3xl:h-[310px] border-b-2 border-[#dddbcb]"
+        className="animate__animated animate__fadeInUp relative mx-2 my-3 h-[300px] lg:h-[280px] max-w-[380px] xl:max-w-[295px] 3xl:max-w-[360px] 3xl:h-[310px] border-b-2 border-[#dddbcb]"
       >
         <figure
           className="card1-figure-img flex justify-center"
