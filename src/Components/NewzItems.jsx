@@ -10,8 +10,8 @@ function NewzItems() {
   const options = {
     method: "GET",
     headers: {
-      // "X-RapidAPI-Key": "07aaf7093dmshae0e2bc1ce4d61ep14bdf4jsn71776f1561fa",
-      "X-RapidAPI-Key": "e345e8925fmshe684befd705bd60p1cf18ajsn1bd7b0d49a0f",
+      "X-RapidAPI-Key": "07aaf7093dmshae0e2bc1ce4d61ep14bdf4jsn71776f1561fa",
+      // "X-RapidAPI-Key": "e345e8925fmshe684befd705bd60p1cf18ajsn1bd7b0d49a0f",
       // "X-RapidAPI-Key": "93337b3302mshae531ee2232d6d6p120395jsn420ebc64749e",
       "X-RapidAPI-Host": "seeking-alpha.p.rapidapi.com",
     },
@@ -20,8 +20,8 @@ function NewzItems() {
   const options_1 = {
     method: "GET",
     headers: {
-      // "X-RapidAPI-Key": "07aaf7093dmshae0e2bc1ce4d61ep14bdf4jsn71776f1561fa",
-      "X-RapidAPI-Key": "e345e8925fmshe684befd705bd60p1cf18ajsn1bd7b0d49a0f",
+      "X-RapidAPI-Key": "07aaf7093dmshae0e2bc1ce4d61ep14bdf4jsn71776f1561fa",
+      // "X-RapidAPI-Key": "e345e8925fmshe684befd705bd60p1cf18ajsn1bd7b0d49a0f",
       // "X-RapidAPI-Key": "93337b3302mshae531ee2232d6d6p120395jsn420ebc64749e",
       "X-RapidAPI-Host": "anime-news-net.p.rapidapi.com",
     },
@@ -30,8 +30,8 @@ function NewzItems() {
   const options_2 = {
     method: "GET",
     headers: {
-      // "X-RapidAPI-Key": "07aaf7093dmshae0e2bc1ce4d61ep14bdf4jsn71776f1561fa",
-      "X-RapidAPI-Key": "e345e8925fmshe684befd705bd60p1cf18ajsn1bd7b0d49a0f",
+      "X-RapidAPI-Key": "07aaf7093dmshae0e2bc1ce4d61ep14bdf4jsn71776f1561fa",
+      // "X-RapidAPI-Key": "e345e8925fmshe684befd705bd60p1cf18ajsn1bd7b0d49a0f",
       // "X-RapidAPI-Key": "93337b3302mshae531ee2232d6d6p120395jsn420ebc64749e",
       "X-RapidAPI-Host": "cnbc.p.rapidapi.com",
     },
