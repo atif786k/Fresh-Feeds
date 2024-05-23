@@ -59,12 +59,13 @@ function NewzItems() {
   };
 
   const run_1 = () => {
-    const URL_1 = "https://anime-news-net.p.rapidapi.com/api/news";
+    // const URL_1 = "https://anime-news-net.p.rapidapi.com/api/news";
+    const URL_1 = 'https://anime-db.p.rapidapi.com/anime?page=1&size=10&search=Fullmetal&genres=Fantasy%2CDrama&sortBy=ranking&sortOrder=asc';
     const fetch_Data_1 = async () => {
       try {
         const response = await fetch(URL_1, options_1);
         const items = await response.json();
-        setAnimeData(items);
+        setAnimeData(items.data);
       } catch (error) {
         console.log("ERROR", error);
       }
@@ -107,7 +108,7 @@ function NewzItems() {
 
   useEffect(() => {
     run();
-    run_1();
+    // run_1();
     run_2();
     run_3();
   }, []);
@@ -116,7 +117,8 @@ function NewzItems() {
 
   const displayItems = dataItems.slice(2, 10);
   const displayNewsItems = newsData.slice(2, 10);
-  const displayAnimeItems = animeData.slice(2, 10);
+  // const displayAnimeItems = animeData.slice(2, 10);
+  // const displayAnimeItems = animeData;
   const displayMarketItems = marketData.slice(2, 10);
 
   return (
@@ -240,20 +242,28 @@ function NewzItems() {
             Anime
           </h1>
           <hr className="border-4 border-[#050505] rounded-r-md mx-2 xl:mx-1 mb-5" />
-          {displayAnimeItems.length === 0 ? (
+          {animeData.length === 0 ? (
             <div id="loading" className="w-[340px] md:w-[700px] xl:w-[1250px]">
               <Skeleton height="50px" count={4} />
             </div>
           ) : (
             <div className="text-[#050505] mx-2 xl:mx-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-              {displayAnimeItems?.map((e) => {
+              {animeData?.map((e) => {
                 return (
-                  <div className="" key={e.details_api.id}>
+                  // <div className="" key={e.details_api.id}>
+                  //   <Card_1
+                  //     title={e.article.title}
+                  //     image={e.article.thumbnail}
+                  //     date={e.article.date}
+                  //     urL={e.article.url}
+                  //   />
+                  // </div>
+                  <div className="" key={e._id}>
                     <Card_1
-                      title={e.article.title}
-                      image={e.article.thumbnail}
-                      date={e.article.date}
-                      urL={e.article.url}
+                      title={e.title}
+                      image={e.image}
+                      date={e.status}
+                      urL={e.link}
                     />
                   </div>
                 );
